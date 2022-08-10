@@ -1,4 +1,4 @@
-from datacenter.models import Schoolkid, Mark
+from datacenter.models import Schoolkid, Mark, Chastisement
 
 def fix_marks(schoolkid):
     child = Schoolkid.objects.get(full_name__contains=schoolkid)
@@ -8,4 +8,10 @@ def fix_marks(schoolkid):
         record.save()
 
 
-fix_marks("Фролов Иван")
+def remove_chastisements(schoolkid):
+    child = Schoolkid.objects.get(full_name__contains=schoolkid)
+    all_chastisements = Chastisement.objects.filter(schoolkid=child)
+    all_chastisements.delete()
+
+
+remove_chastisements("Голубев Феофан")
