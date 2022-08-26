@@ -1,6 +1,6 @@
 import random
 
-from datacenter.models import Schoolkid, Mark, Chastisement, Lesson, Subject, Commendation
+from datacenter.models import Schoolkid, Mark, Chastisement, Lesson, Commendation
 from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
 
 
